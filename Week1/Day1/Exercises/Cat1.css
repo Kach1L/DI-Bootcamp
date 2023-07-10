@@ -1,0 +1,22 @@
+.lion {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.cat {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.char {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.c {
+    text-align: center;
+}

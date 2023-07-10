@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Anton, sans Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background-image: url("https://static.toiimg.com/thumb/msid-88293744,width-1280,resizemode-4/88293744.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.top {
+    padding: 10px;
+    width: 85%;
+    margin: auto;
+}
+
+.midinfo {
+    color: rgb(153, 221, 249);
+    height: 100px;
+    width: 50%;
+    margin: auto;
+    padding-top: 10%;
+    font-size: 30px;
+}
+
+ul a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+nav {
+    height: 80px;
+    background-color: rgb(153, 221, 249);
+}
+
+nav h1 {
+    float: left;
+    line-height: 80px;
+    font-size: 35px;
+    font-size: inline;
+    position: relative;
+    height: 20px;
+}
+
+nav ul {
+    float: right;
+    line-height: 80px;
+}
+nav ul a{
+    display: inline-block;
+    list-style: none;
+    padding: 0px 20px;
+}
+
+.imp {
+    font-size: 125%;
+}
+
+.imp2{
+    text-align: center;
+}
+
+section h1 {
+    font-size: 200%;
+    text-align: center;
+}
+
+
