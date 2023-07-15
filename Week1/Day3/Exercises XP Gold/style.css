@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    font-family: Poppins, Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(188, 188, 255);
+}
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    height: 290px;
+    border: 1px solid green;
+}
+
+.box{
+    display: flex;
+    width:49vw;
+    height: 290px;
+    border: 2px solid red;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Example2 Grid(CSS)
+#container{
+    display: grid;
+    border: 1px solid black;
+    height: 700px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 100px);
+}
+
+#header{
+    text-align: center;
+    background-color: aqua;
+    grid-column: 2/ span 3;
+    grid-row: 1/ span 1;
+}
+
+#hero{
+    text-align: center;
+    background-color: lavender;
+    grid-column: 2/ span 1;
+
+}
+
+#main{
+    text-align: center;
+    background-color: #ffdd00;
+    grid-column: 3/ span 2;
+    grid-row: 2/span 2;
+}
+
+#sidebar{
+    text-align: center;
+    background-color: greenyellow;
+    grid-column: 2/ span 1;
+    grid-row: 3/ span 2;
+}
+
+#extra{
+    text-align: center;
+    background-color: grey;
+    grid-column: 3/ span 2;
+}
+
+#img{
+    text-align: center;
+    background-color: green;
+    grid-column: 2/ span 2;
+    grid-row: 5/ span 1;
+}
+
+#posts{
+    text-align: center;
+    background-color: pink;
+    grid-column: 4/ span 1;
+    grid-row: 5/ span 1;
+}
+
+#footer{
+    padding-top: 70px;
+    text-align: center;
+    background-color: rgb(255, 179, 0);
+    grid-column: 2/ span 3;
+    grid-row: 6/ span 1;
+} */
+
+
+
+
+
+
+/* Example1 Flex(CSS)
+#container{
+    height: 350px;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#child1{
+    background-color: aqua;
+    border: 2px solid aqua;
+    height: 100px;
+    width: 400px;
+    margin: 5px;
+    text-align: center;
+    align-self: center; 
+}
+
+#child2{
+    background-color: aqua;
+    border: 2px solid aqua;
+    height: 100px;
+    width: 700px;
+    margin: 5px;
+    text-align: center;
+    align-self: center;
+}
+
+#child3{
+    background-color: aqua;
+    border: 2px solid aqua;
+    height: 100px;
+    width: 400px;
+    margin: 5px;
+    text-align: center;
+    align-self: center;
+} */
+

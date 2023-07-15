@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
+
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
     font-family: Anton, sans Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
