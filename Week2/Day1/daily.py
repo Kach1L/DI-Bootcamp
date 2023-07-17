@@ -1,15 +1,16 @@
 # import random
 # Ex 1 & 2
-# user_string = input("Write a string that is at least 10 characters long\n")
+user_string = input("Write a string that is at least 10 characters long\n")
 
-# if user_string < 10:
-#     print("string not long enough")
-# elif user_string > 10:
-#     print("string too long")
-# else:
-#     print("perfect string")
+if len(user_string) < 10:
+    print("string not long enough")
+elif len(user_string) > 10:
+    print("string too long")
+else:
+    print("perfect string")
 
-# print(user_string[0] and len(user_string))
+print("First: ", user_string[0]) 
+print("Last: ", user_string[-1])
 
 
 # Ex 3
