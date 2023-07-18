@@ -5,7 +5,7 @@
 # my_fav_numbers.pop(-1)
 
 # friend_fav_numbers = {9, 15, 4, 11}
-# our_fav_numbers = my_fav_numbers + friend_fav_numbers
+# our_fav_numbers = my_fav_numbers.union(friend_fav_numbers) 
 # print(our_fav_numbers)
 
 
@@ -65,6 +65,7 @@
 
 
 # Ex 8
+# Incorrect
 # pizza_top = input("enter a pizza topping\n")
 # print(f"You'll be adding {pizza_top} to your pizza.")
 # for i in pizza_top:
