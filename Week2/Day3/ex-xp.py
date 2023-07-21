@@ -86,14 +86,14 @@ print(more_on_zara["number_stores"])
 
 # disney_users_B = dict(zip(numbers, users))
 
-# disney_users_C = {}
-# users = ["Ariel","Donald","Mickey","Minnie","Pluto"]
-# numbers = []
+# Exercise 3 : Disney Characters
 
-# for num in range(0, 5):
-#     numbers.append(num)
+# users = ["Mickey","Minnie","Donald","Ariel","Pluto"]
+# indexes = [i for i in range(len(users))]
 
-# disney_users_C = dict(zip(users, numbers))
+# Use a method to recreate the 3rd result. Hint: The 3rd result is sorted alphabetically.
+# outputA = dict(zip(sorted(users), indexes))
+# print(outputA)
 
 # disney_users_A2 = {}
 # users = ["Mickey","Minnie","Ariel","Pluto"]
