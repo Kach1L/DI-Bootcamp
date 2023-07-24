@@ -1,57 +1,45 @@
-class Farm:
-    def __init__(self, name, add_animal1, add_animal2, add_animal3, get_info):
-        self.name = name
-        self.add_animal1 = add_animal1
-        self.add_animal2 = add_animal2
-        self.add_animal3 = add_animal3
-        self.get_info = get_info
-        
-    def name(self):
-        print(f"{self.name}'s farm\n\n")
+class Farm :
+    def __init__(self, name) :
+        self.farm_name = name
+        self.animals = {}
 
-    def add_animal(self):
-        print(f'{self.add_animal1} : 5')
-        print(f'{self.add_animal2} : 2')
-        print(f'{self.add_animal3} : 12\n\n')
+    def add_animal(self, animal, amount=1):
+        if animal in self.animals :
+             self.animals[animal] += amount
+        else :
+            self.animals[animal] = amount
+
+    def get_info(self) :
+        print(f"{self.farm_name}'s farm")
+        for animal, amount in self.animals.items() :
+            print(f"{animal} : {amount} \n")
+        print("E-I-E-I-0!")
+
+    def get_animal_types(self) :
+        keys_dictionary = self.animals.keys() #list
+        return sorted(keys_dictionary) #["cow", "goat", "sheep"]
     
-    def get_info(self):
-        print(f'\t{self.get_info}0')
-        
-name1 = Farm(' ','McDonald', ' ', ' ', ' '  ' ')
-print(name1.name)
+    def get_short_info(self) :
+        list_keys = self.get_animal_types()[:] #["cow", "goat", "sheep"]
+        for animal, amount in self.animals.items() :
+            if amount > 1 :
+                position = list_keys.index(animal)
+                list_keys[position] += "s"
 
-add_animal1 = Farm
-('cow', ' ', ' ', ' ', ' ')
-print(add_animal1.add_animal)
-add_animal2 = Farm('sheep', ' ', ' ', ' ', ' ')
-print(add_animal2.add_animal)
-add_animal3 = Farm('goat', ' ', ' ', ' ', ' ')
-print(add_animal3.add_animal)
+        animals = " , ".join(list_keys[:-1]) #from the first to the one before the last one 
+        sentence = f"In the farm there is {animals} and {list_keys[-1]}"
+        print(sentence)
+            
 
-get_info1 = Farm('E-I-E-I-', ' ', ' ', ' ', ' ')
-print(get_info1.get_info)
+my_farm = Farm("McDonald")
+my_farm.add_animal("sheep", 2)
+my_farm.add_animal("cow", 5)
+my_farm.add_animal("goat")
+my_farm.add_animal("sheep")
+# print(my_farm.animals)
+my_farm.get_info()
+my_farm.get_short_info()
+
+# {'sheep': 3, 'cow': 5, 'goat': 1}
 
 
-#     def title(self):
-#         print(f"{self.name}'s farm\n\n")
-    
-#     def cows(self, cow):
-#         self.cow = cow
-#         print({self.cow})
-    
-#     def sheeps(self, sheep):
-#         self.sheep = sheep
-#         print({self.sheep})
-    
-#     def goats(self, goat):
-#         self.goat = goat
-#         print({self.goat})
-        
-# name1 = Farm('McDonald')
-# name1.title()
-# cow1 = Farm('cow : 5')
-# cow1.cows()
-# sheep1 = Farm('sheep : 2')
-# sheep1.sheeps()
-# goat1 = Farm('goat : 12')
-# goat1.goats()
