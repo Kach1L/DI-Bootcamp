@@ -18,8 +18,24 @@ class Employee:
     def get_promotion(self, promotion_amount):
         self.salary += promotion_amount
 
-    def show_info(self):
-        print(f"name:{self.get_fullname} age:{self.age} job:{self.job} salary:{self.salary}")
+    def __str__(self):
+        return (f"name:{self.get_fullname} age:{self.age} job:{self.job} salary:{self.salary}")
+    
+    def create_best_employee(self,newemployee):
+        if newemployee.salary>30000:
+            self.newemployee = newemployee
+            return newemployee
+            
+        
+    # What I learnt from Week3 Day3(Dunder Methods)
+    def __gt__(self,other_employee):
+        if self.salary>other_employee.salary:
+            return self
+        else:
+            return other_employee 
+
+    def __add__(self,other_employee):
+        return self.salary + other_employee.salary
 
 
 
@@ -36,4 +52,6 @@ class Developer(Employee):
     def coding(self):
         all_skills = ",".join(self.coding_skills)
         print((f'The developer named {self.get_fullname()}'))
+
+    
         
