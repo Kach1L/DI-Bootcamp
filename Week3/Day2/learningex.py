@@ -1,11 +1,12 @@
 # Ex 1: Basic Classes
 class Employee:
-    def __init__(self,first_name,last_name,age,job,salary):
+    def __init__(self,first_name,last_name,age,job,salary,address):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
         self.job = job
         self.salary = salary
+        self.__address = address
         print(f'{self.first_name} {self.last_name} {self.age} years old {self.job}, who has a salary of ${self.salary}.')
         
         
@@ -25,8 +26,21 @@ class Employee:
         if newemployee.salary>30000:
             self.newemployee = newemployee
             return newemployee
+    
+    @property
+    def address(self):
+        return self.address
+    
+    @address.setter
+    def address(self,newaddress):
+        try:
+            if self.age > 30:
+                self.address = newaddress
+            else:
+                raise TypeError('Too young Employee')
+        except Exception as err:
+            print(err)
             
-        
     # What I learnt from Week3 Day3(Dunder Methods)
     def __gt__(self,other_employee):
         if self.salary>other_employee.salary:
