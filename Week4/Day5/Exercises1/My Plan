@@ -1,0 +1,12 @@
+0. I think for the rock paper game I need to create a class called 'Rps'(Rock,Paper,scissors) which I will use for the text in each class that will be printed when the code is executed.
+
+1. Since we are going to play against a computer, I think one of the steps would be to create self choice and computer choice parameters
+
+2. We will need a play method that start all the other methods accordingly
+
+
+0^2For the game file this is were the if statements and loops thats will make game function. Most likely I will only do for loops and try and except methods. 
+
+1. We need to start a class for the backend part of the game.
+
+2. We'll need a try method for when we ask rock, paper, scissors.
