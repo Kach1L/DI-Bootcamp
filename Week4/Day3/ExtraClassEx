@@ -1,0 +1,39 @@
+# Ex 1
+# list1 = [2, 4, 6, 7]
+# def list_add(list):
+#     if len(list) == 0:
+#         return 'Done'
+#     else: 
+#         sum = 2 + list[1:]
+#         return sum 
+# print(list_add(list1))
+
+
+# Ex 2
+# word = 'Hello World!'
+# def flip(text):
+#     if len(text) == 0:
+#         return text
+#     else: 
+#         return flip(text[1:]) + text[0]
+
+# def flip(text):
+#     if len(text) == 0:
+#         return text
+#     else: 
+#         return text[-1] + flip(text[:-1])
+# print(flip(word))
+
+
+# Ex 3
+def powerof(base,exponent):
+    if exponent == 0:
+        return 1
+    else: 
+        return base * powerof(base, exponent - 1)
+print(powerof(2,3))
+
+
+
+
+

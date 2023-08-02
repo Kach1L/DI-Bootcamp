@@ -1,12 +1,10 @@
 # Ex 1
-# print("Hello world\nHello world\nHello world\nHello world")
-
+# print("Hello world\n"*4)
 
 
 # Ex 2
-# num1 = 99^3
-# num2 = 8
-# calc = num1 * num2
+# print(99**3*8)
+
 
 
 
@@ -56,8 +54,8 @@
 
 
 # Ex 8
-# name = Alex
-# input("What's your name?")
+# name = 'Kachi'
+# input = input("What's your name?")
 
 # if input == name:
 #     print("What do u know, we have the same name😁")
