@@ -1,0 +1,7 @@
+-- CREATE TABLE RegTable(
+-- id serial PRIMARY KEY,
+-- name varchar(50) DEFAULT null,	
+-- user_name varchar(50) NOT NULL,
+-- password varchar(50) NOT NULL,
+-- age smallint NOT NULL
+-- );
