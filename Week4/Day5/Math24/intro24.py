@@ -1,5 +1,6 @@
+# from game24 import GameScreen
 from faker import Faker
-# import psycopg2
+import psycopg2
 
 class Begin:
     def __init__(self): 
@@ -29,34 +30,42 @@ class Begin:
             print(f'Password is too small\n{self.password}')
         else:
             print('Processing')
-            
+        
         self.age = int(input("How old are you?\t"))
         if self.age < 5:            
             print('Go outside, you are too little to play.')
         else:
             print('Processing, updating database with this info') 
-    
-        # connection = psycopg2.connect(
-        #     database="Math24SignIn",
-        #     user="postgres",
-        #     password="Kachikwulu1",
-        #     host="localhost",
-        #     port="5432"
-        # )
+
+
+    def pyinsert(self):
+        connection = psycopg2.connect(
+        database="Math24SignIn",
+        user="postgres",
+        password="Kachikwulu1",
+        host="localhost",
+        port="5432"
+        )
         
+        # Create a cursor
+        cursor = connection.cursor()
+
+        # Insert data
+        insert_query = "INSERT INTO RegTable (name, user_name, password, age) VALUES (%s, %s, %s, %s)"
+        data_to_insert = (self.name, self.username, self.password, self.age)
+        cursor.execute(insert_query, data_to_insert)
+
+        # Commit changes
+        connection.commit()
+
+        # Close cursor and connection
+        cursor.close()
+        connection.close()
 
 p1 = Begin()
 print(p1.welcome())
 print(p1.signup())
+print(p1.pyinsert())
 
 
 
-# self.first_name = first_name
-#         self.last_name = last_name
-#         self.user_name = user_name
-#         self.password = password
-#         self.nationality = nationality
-#         self.age = age
-
-
-# ,first_name=input,last_name=input,user_name=input,password=input,nationality=input,age=int(input)
