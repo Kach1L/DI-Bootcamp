@@ -2,8 +2,8 @@ from django.db import models
 
 # Create your models here.
 CATEGORY_CHOICES = (
-   ('Dj', 'Django'),
-   ('Py', 'Python'),
+   ('sci', 'scientific'),
+   ('py', 'python'),
 )
 
 class Post(models.Model):

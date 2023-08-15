@@ -4,11 +4,15 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import Report
 from django.http import JsonResponse
 from rest_framework.parsers import JSONParser
+from .permissions import IsForecaster
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
 class ReportView(APIView):
+    
+    permission_classes = (IsForecaster,)
+    
     def get(self, request, *args, **kwargs):
         reports = Report.objects.all()
         serializer = ReportSerializer(reports, many=True)
@@ -31,8 +35,11 @@ class ReportView(APIView):
         return Response(serializer.errors)
 
     def delete(self, request, pk, *args, **kwargs):
-        post = Report.objects.get(id=pk)
-        post.delete()
-        return Response({'message':f'Post id - {pk} DELETED'})
+        report = Report.objects.get(id=pk)
+        
+        self.check_object_permissions(request, report)
+        
+        report.delete()
+        return Response({'message':f'Report id - {pk} DELETED'})
     
     
