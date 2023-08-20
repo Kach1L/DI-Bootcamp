@@ -1,0 +1,5 @@
+/* Adding a light blue background and padding to the div */
+#container {
+    background-color: lightblue;
+    padding: 10px;
+}
