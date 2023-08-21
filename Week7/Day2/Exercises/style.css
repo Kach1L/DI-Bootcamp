@@ -1,0 +1,8 @@
+#p2 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#p2.fade {
+    opacity: 0;
+}
