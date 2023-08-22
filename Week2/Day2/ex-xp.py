@@ -58,74 +58,96 @@
 # fav_fruits.split(" ")
 
 # fav_fruit = input("What is your favorite fruit?")
-# if fav_fruits == fav_fruit:
+# if fav_fruit == fav_fruits:
 #     print("You chose one of your favorite fruits! Enjoy!")
 # else:
 #     print("You chose a new fruit. I hope you enjoy")
 
 
 # Ex 8
-# Incorrect
-# pizza_top = input("enter a pizza topping\n")
-# print(f"You'll be adding {pizza_top} to your pizza.")
-# for i in pizza_top:
-#     print(i)
-# if pizza_top == "quit":
-#     print("topping chooser has ended")
-#     print(i.count*12.5)
-# else: 
-#     print("enter a pizza topping")
+# toppings = []
+# price_per_topping = 2.5
+
+# while True:
+#     topping = input("Enter a pizza topping (or 'quit' to finish): ")
+    
+#     if topping.lower() == 'quit':
+#         break
+    
+#     toppings.append(topping)
+#     print(f"Adding {topping} to your pizza.")
+
+# total_price = 10 + len(toppings) * price_per_topping
+
+# print("\nToppings on your pizza:")
+# for topping in toppings:
+#     print(topping)
+
+# print(f"\nTotal price: ${total_price:.2f}")
 
 
 
 # Ex 9
-# fam_amount = int(input("How of you are here?"))
-# fam_age = int(input("What is your age?"))
+# Calculate ticket price based on age
+# def calculate_ticket_price(age):
+#     if age < 3:
+#         return 0
+#     elif 3 <= age <= 12:
+#         return 10
+#     else:
+#         return 15
 
-# if fam_age < 3:
-#     print("the ticket is free.")
-# elif 3 <= fam_age < 12:
-#     print("the ticket is $10.")
-# else :
-#     print("the ticket is $15.")
+# # Ask for family members' ages
+# num_family_members = int(input("Enter the number of family members: "))
+# total_cost = 0
 
-# while 0 < fam_amount:
-#     print(fam_age = int(input("What is your age?")))
-# I don't know how to do the total
+# for i in range(num_family_members):
+#     age = int(input(f"Enter the age of family member {i + 1}: "))
+#     ticket_price = calculate_ticket_price(age)
+#     total_cost += ticket_price
 
-# teenagers = {"Sally", "Sam", "Tom", "Daniel"}
-# age = int(input("What is your age?"))
-# num = 0
-# while num < 4:
-#     print(age)
+# print(f"Total cost for the family's tickets: ${total_cost:.2f}")
 
-# if age < 16 and age > 21:
-#     teenagers.pop[num]
-# else:
-#     print("You many go in and enjoy.")
 
-# print(teenagers)
+# # Calculate ticket price based on age
+# def calculate_ticket_price(age):
+#     if age < 3:
+#         return 0
+#     elif 3 <= age <= 12:
+#         return 10
+#     else:
+#         return 15
 
+# # Ask for family members' ages
+# num_family_members = int(input("Enter the number of family members: "))
+# total_cost = 0
+
+# for i in range(num_family_members):
+#     age = int(input(f"Enter the age of family member {i + 1}: "))
+#     ticket_price = calculate_ticket_price(age)
+#     total_cost += ticket_price
+
+# print(f"Total cost for the family's tickets: ${total_cost:.2f}")
 
 
 # Ex 10
 # sandwich_orders = ["Tuna sandwich", "Pastrami sandwich", "Avocado sandwich", "Pastrami sandwich", "Egg sandwich", "Chicken sandwich", "Pastrami sandwich"]
-
-# i = 0
-# while i <= 2:
-#     sandwich_orders.remove("Pastrami sandwich")
-#     print(sandwich_orders)
-#     i += 1
-
 # finished_sandwiches = []
-# num = 0
-# while num <= 3:
-#     order = sandwich_orders.pop()
-#     finished_sandwiches.insert(0, order)
-#     print(finished_sandwiches)
-    
-# print(f"I made your {finished_sandwiches[num]}")
-# Not sure about this one
+
+# # Remove all occurrences of "Pastrami sandwich" from sandwich_orders
+# while "Pastrami sandwich" in sandwich_orders:
+#     sandwich_orders.remove("Pastrami sandwich")
+
+# # Prepare the orders and move them to finished_sandwiches
+# while sandwich_orders:
+#     current_sandwich = sandwich_orders.pop(0)
+#     finished_sandwiches.append(current_sandwich)
+#     print(f"I made your {current_sandwich.lower()}")
+
+# print("\nList of sandwiches that were made:")
+# for sandwich in finished_sandwiches:
+#     print(sandwich)
+
 
 
 

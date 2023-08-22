@@ -1,38 +1,47 @@
 # Challenge 1
-# word = input("give me a word\n")
-# index_dict = {}
-# values = list(range(0))
+word = input("Enter a word: ")
 
-# for i in word:
-#     for num in values:
-#         word = {
-#             i : range(num)
-#             }
+index_dict = {}
+
+for index, letter in enumerate(word):
+    if letter in index_dict:
+        index_dict[letter].append(index)
+    else:
+        index_dict[letter] = [index]
+
+print(index_dict)
+
 
 
 
 # Challenge 2
-# items_purchase = {
-#   "Water": "$1",
-#   "Bread": "$3",
-#   "TV": "$1,000",
-#   "Fertilizer": "$20"
-# }
+# Define the items and their prices
+items_purchase = {
+    "Water": "$1",
+    "Bread": "$3",
+    "TV": "$1,000",
+    "Fertilizer": "$20"
+}
 
-# wallet = input("What's your balance? Ex $300")
+money = '$300'
 
-# if wallet > (items_purchase):
-#     afforded = ["Water", "Bread", "TV", "Fertilizer",]
-#     print(afforded)
-# elif wallet > (items_purchase["Water", "Bread", "Fertilizer"]):
-#     afforded = ["Water", "Bread", "Fertilizer",]
-#     print(afforded)
-# elif wallet > (items_purchase["Water", "Bread"]):
-#     afforded = ["Water", "Bread"]
-#     print(afforded)
-# elif wallet > (items_purchase["Water"]):
-#     afforded = ["Water"]
-#     print(afforded)
-# else:
-#     print('Nothing')
+# Get the amount of money in the wallet
+wallet = int(money[1:])  # Convert wallet string to an integer
 
+# Initialize a list to store affordable items
+affordable_items = []
+
+# Iterate through items and check affordability
+for item, price in items_purchase.items():
+    item_price = int(price[1:].replace(',', ''))  # Convert item price string to an integer
+    if item_price <= wallet:
+        affordable_items.append(item)
+
+# Sort the affordable items alphabetically
+affordable_items.sort()
+
+# Print the result
+if affordable_items:
+    print(affordable_items)
+else:
+    print("Nothing")

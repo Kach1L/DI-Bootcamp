@@ -12,10 +12,14 @@
 # (5 < 3) = False
 # (3 == 3) = True
 # (3 == "3") = False
-# ("3" > 3) = False
+# (3 != 3) = False
 # "Hello" == "hello" = False
+# user_input = input("Enter a string: ")
+# substring = ''
 
-
+# for letter in user_input:
+#     substring += letter
+#     print(substring)
 
 # Ex 4
 # computer_brand = "victus 16"
@@ -65,8 +69,8 @@
 
 
 # Ex 9
-# input("What is your height in inches?")
-# height_in_cm = input * 2.54
+# height = input("What is your height in inches?")
+# height_in_cm = float(height) * 2.54
 
 # if height_in_cm > 145:
 #     print("You are tall enough to ride the roller coaster.")

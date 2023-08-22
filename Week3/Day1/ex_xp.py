@@ -54,84 +54,76 @@
 
 # Ex 3
 # class Song:
-#     def __init__(self, lyrics):
+#     def __init__(self, lyrics=list):
 #         self.lyrics = lyrics
+        
 #     def sing_me_a_song(self):
-#         lyrics= (f'{self.lyrics}')
+#         lyrics= (f'{self.lyrics[0]}\n{self.lyrics[1]}\n{self.lyrics[2]}')
 #         print(lyrics)
+#         return lyrics
             
-# lyrics1 = Song("There's a lady who's sure\nall that glitters is gold\nand she's buying a stairway to heaven")
+# lyrics1 = Song(["There's a lady who's sure","all that glitters is gold","and she's buying a stairway to heaven"])
 # lyrics1.sing_me_a_song()
 
 
 
 # Ex 4
-# class Zoo:
-#     def __init__(self, zoo_name, animals):
-#         self.zoo_name = zoo_name
-#         self.animals = animals
-#     def add_animal(self, new_animal):
-#         animals = ['Baboon', "Bear", 'Cat', 'Cougar', 'Eel', 'Emu', "Ape"]
+class Zoo:
+    def __init__(self, zoo_name):
+        self.name = zoo_name
+        self.animals = []
+
+    def add_animal(self, new_animal):
+        if new_animal not in self.animals:
+            self.animals.append(new_animal)
+            print(f"{new_animal} added to the zoo!")
+
+    def get_animals(self):
+        print("Animals in the zoo:")
+        for animal in self.animals:
+            print(animal)
+
+    def sell_animal(self, animal_sold):
+        if animal_sold in self.animals:
+            self.animals.remove(animal_sold)
+            print(f"{animal_sold} sold from the zoo!")
+
+    def sort_animals(self):
+        sorted_animals = {}
+        for animal in self.animals:
+            first_letter = animal[0].capitalize()
+            if len(first_letter) not in sorted_animals:
+                sorted_animals[len(first_letter)] = []
+            sorted_animals[len(first_letter)].append(animal)
         
-#         animals_sorted = sorted(animals)
+        return sorted_animals
 
-#         print(animals_sorted)
-
-#         animals_groups = {}
-
-#         animal_check = animals_sorted[0]
-#         group = 1
-
-#         animals_groups[group] = [animal_check] 
-#         for animal in animals_sorted[1:]:
-#             if animal_check[0] == animal[0]: 
-#                 animals_groups[group].append(animal)
-#         else:
-#             group += 1 # 3
-#         animals_groups[group] = [animal]
-#         animal_check = animal # Cat
-    
-#         print(animals_groups)
-    
-#     def get_animals(self):
-#         animals = ['Baboon', "Bear", 'Cat', 'Cougar', 'Eel', 'Emu', "Ape"]
-#         animals_sorted = sorted(animals)
-#         print(animals_sorted)
-        
-#     def sell_animals(self, animal_sold):
-#         animals = ['Baboon', "Bear", 'Cat', 'Cougar', 'Eel', 'Emu', "Ape"]
-#         for ani in animals:
-#             if ani == animal_sold:
-#                 animals -= ani
-            
-
-#     def sort_animals(self):
-#         animals = ['Baboon', "Bear", 'Cat', 'Cougar', 'Eel', 'Emu', "Ape"]
-
-#         animals_sorted = sorted(animals)
-
-#         print(animals_sorted)
-
-#         animals_groups = {}
+    def get_groups(self):
+        sorted_animals = self.sort_animals()
+        print("Animals grouped by first letter:")
+        for length, animals in sorted_animals.items():
+            print(f"{length}: {animals}")
 
 
-#     def get_groups(self):
-#         animals = ['Baboon', "Bear", 'Cat', 'Cougar', 'Eel', 'Emu', "Ape"]
-#         for ani in animals:
-#             print(ani)
-            
-#     ramat_gam_safari = print('Which animal should we add to the zoo --> Baboon')
-#     add_animal.add_animal('Baboon')
+# Create an object called ramat_gan_safari
+ramat_gan_safari = Zoo("Ramat Gan Safari")
 
+# Add animals
+ramat_gan_safari.add_animal("Lion")
+ramat_gan_safari.add_animal("Giraffe")
+ramat_gan_safari.add_animal("Elephant")
+ramat_gan_safari.add_animal("Gorilla")
+ramat_gan_safari.add_animal("Giraffe")  # This won't be added since it's a duplicate
 
+# Get animals
+ramat_gan_safari.get_animals()
 
-            
-    
+# Sell an animal
+ramat_gan_safari.sell_animal("Lion")
 
+# Sort and get groups
+groups = ramat_gan_safari.sort_animals()
+print(groups)
 
-
-
-
-
-
-
+# Print animals in each group
+ramat_gan_safari.get_groups()
