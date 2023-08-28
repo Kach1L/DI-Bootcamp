@@ -1,0 +1,23 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(20, 30px); /* Adjust as needed */
+    gap: 1px; /* Adjust spacing between cells */
+    margin: 20px auto;
+}
+
+.grid div {
+    width: 30px; /* Adjust square size */
+    height: 30px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.color-picker {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.color-picker input[type="color"] {
+    width: 50px;
+}
+
