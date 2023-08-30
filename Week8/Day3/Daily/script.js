@@ -1,10 +1,12 @@
 const userInput = document.querySelector("#searchBox");
+const userImage = document.querySelector("img");
 const userButton = document.querySelector("#btn1");
 const deleteButton = document.querySelector("#btn2");
-const userImage = document.querySelector("img");
+const gifForm = document.querySelector("#gifForm");
+
+// gifForm.addEventListener("submit",retrieveSearchData);
 
 async function retrieveSearchData(search) {
-    // e.preventDefault()
     const randomData = await fetch(`https://api.giphy.com/v1/gifs/random?q=${search}&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My`);
     try{
         if (!randomData.ok){
@@ -12,15 +14,14 @@ async function retrieveSearchData(search) {
     } else{
         const randomInfo = await randomData.json()
         console.log(randomInfo);
-        source = randomInfo["data"]["images"]["downsized"]["url"]
-        userImage.src = source
+        const source = randomInfo["data"]["images"]["original"]["url"]
+        userImage.src = source;
     }  } catch(err){
         console.error("IN THE CATCH", err);
     }
 
-    deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", () => {
         userImage.remove();
     });
 }
-retrieveSearchData(userInput.value)
+retrieveSearchData(userInput.value);

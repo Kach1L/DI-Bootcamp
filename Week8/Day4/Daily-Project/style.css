@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-image: url("https://usagif.com/wp-content/uploads/gifs/raining-money-10.gif");
+    background-size: 100rem;
+    background-position-y: -70px;
+    background-position-x: -50px;
+    background-repeat: no-repeat;
+}
+
+#generalDiv {
+    padding-top: 120px;
+}
