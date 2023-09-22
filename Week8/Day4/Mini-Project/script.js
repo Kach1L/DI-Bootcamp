@@ -6,17 +6,27 @@ function displayImageTitle(){
     // let titleDiv = document.querySelector("#imageTitle");
     let titleImage = document.querySelector("#starLogo");
     titleImage.src = "https://www.freepnglogos.com/uploads/star-wars-logo-32.png";
+    const loading = document.querySelector("i");
+    loading.style.opacity = 0;
 }
-displayImageTitle()
+displayImageTitle();
 
 let starButton = document.querySelector("#newCharBtn");
-starButton.addEventListener("click", getStarInfo);
+starButton.addEventListener("click",getStarInfo)
 
 async function getStarInfo(){
-    try{
-        let randomNum = Math.floor(Math.random()*83)+1
+    const starContainer = document.querySelector("#starWarsData");
+    const loading = document.querySelector("i");
+    loading.style.color = "white";
+    loading.style.fontSize = "150px";
+    loading.style.opacity = 1;
+    loading.style.marginTop = "120px";
+    starContainer.append(loading);
 
-        let starData = await fetch(`https://www.swapi.tech/api/people/${randomNum}`)
+    try{
+        const randomNum = Math.floor(Math.random()*83)+1
+
+        const starData = await fetch(`https://www.swapi.tech/api/people/${randomNum}/`);
         // console.log(starData);
 
         if(!starData.ok){
@@ -32,44 +42,49 @@ async function getStarInfo(){
 
     async function displayStarInfo(core){
         const starContainer = document.querySelector("#starWarsData");
-            const starName = document.createElement("h3");
-            const starHeight = document.createElement("h4");
-            const starGender = document.createElement("h4");
-            const starBirthYear = document.createElement("h4");
-            const starHomeWorld = document.createElement("h4");
+        const starName = document.createElement("h3");
+        const starHeight = document.createElement("h4");
+        const starGender = document.createElement("h4");
+        const starBirthYear = document.createElement("h4");
+        const starHomeWorld = document.createElement("h4");
 
-            const starButtonContainer = document.querySelector("#buttonDiv");
+        // const starButtonContainer = document.querySelector("#buttonDiv");
 
-            let personName = core["result"]["properties"]["name"];
-            const personHeight = core["result"]["properties"]["height"];
-            const personGender = core["result"]["properties"]["gender"];
-            const personBirthYear = core["result"]["properties"]["birth_year"];
-            const personHomeWorldPath = core["result"]["properties"]["homeworld"];
+        const personName = core["result"]["properties"]["name"];
+        const personHeight = core["result"]["properties"]["height"];
+        const personGender = core["result"]["properties"]["gender"];
+        const personBirthYear = core["result"]["properties"]["birth_year"];
+        const personHomeWorldPath = core["result"]["properties"]["homeworld"];
 
-            const homeData = await fetch(`${personHomeWorldPath}`)
+        const homeData = await fetch(`${personHomeWorldPath}`)
 
-            if(!homeData.ok){
-                throw new Error("Home World LOST!!!");
-            }else{
-                const homeInfo = await homeData.json();
-                // console.log(homeInfo);
-                const homeWorldName = homeInfo["result"]["properties"]["name"];
+        if(!homeData.ok){
+            throw new Error("Home World LOST!!!");
+        }else{
+            const homeInfo = await homeData.json();
+            // console.log(homeInfo);
+            const homeWorldName = homeInfo["result"]["properties"]["name"];
                 
-                starName.value = personName
-                starHeight.value = personHeight
-                starGender.value = personGender
-                starBirthYear.value = personBirthYear
-                starHomeWorld.value = homeWorldName                
-                
-                starContainer.append(`${starName.value} `,`Height: ${starHeight.value} `,`Gender: ${starGender.value} `,`Birth Year: ${starBirthYear.value} `,`Home World: ${starHomeWorld.value}`);
+            starName.innerText = personName
+            starHeight.innerText = personHeight
+            starGender.innerText = personGender
+            starBirthYear.innerText = personBirthYear
+            starHomeWorld.innerText = homeWorldName
+            const loading = document.querySelector("i");
+            loading.style.display = 'none';              
 
-                starButton.addEventListener("click",() => {
-                    starContainer.remove()
-                    // (starName,starHeight,starGender,starBirthYear,starHomeWorld);
-                    getStarInfo();
-                })
-            }
-            
+            starContainer.append(starName, starHeight, starGender, starBirthYear, starHomeWorld);
+
+            starButton.addEventListener("click",() => {
+            starName.remove();
+            starHeight.remove();
+            starGender.remove();
+            starBirthYear.remove();
+            starHomeWorld.remove();
+            loading.style.display = 'block'
+            // getStarInfo();
+            })
+        }
     }
 }
     

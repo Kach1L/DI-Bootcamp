@@ -18,6 +18,7 @@ body {
 #starWarsData{
     border: 2px double gold;
     border-radius: 20px;
+    height: 250px;
 }
 
 #newCharBtn{
