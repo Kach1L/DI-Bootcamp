@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Gen</title>
+</head>
+<body>
+    <h1>Game Generator</h1>
+
+    <div id="app">
+        <div>
+            <h2>Genre</h2>
+            <label for="dropdown">Select a Genre:</label>
+                <select id="dropdown1">
+                <option value="Shooter">Shooter</option>
+                <option value="MMOARPG">MMOARPG</option>
+                <option value="ARPG">ARPG</option>
+                <option value="Strategy">Strategy</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Action RPG">Action RPG</option>
+                <option value="Battle Royale">Battle Royale</option>
+                <option value="MOBA">MOBA</option>
+                <option value="Sports">Sports</option>
+                <option value="Racing">Racing</option>
+                <option value="Card Game">Card Game</option>
+                <option value="MMO">MMO</option>
+                </select>
+        </div>
+        
+        <div>
+            <h2>Platform</h2>
+            <label for="dropdown">Select a Platform:</label>
+                <select id="dropdown2">
+                <option value="PC (Windows)">PC (Windows)</option>
+                <option value="Web Browser">Web Browser</option>
+                </select>
+        </div>
+    </div>
+
+    <div>
+        <button id="btn">Confirm</button>
+    </div>
+
+    <div id="api-data">
+        <h2 id="game-title"></h2>
+        <img src="" alt="game-img">
+        <h4 id="game-link"></h4>
+    </div>
+
+    <div id="attribution">
+        Data provided by <a href="https://www.freetogame.com/">FreeToGame.com</a>.
+    </div>
+</body>
+<script src="script.js"></script>
+<link rel="stylesheet" href="style.css">
+</html>

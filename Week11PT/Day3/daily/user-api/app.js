@@ -1,12 +1,16 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const fs = require('fs');
 const app = express();
 const port = 3000;
 const usersFile = 'user.json';
 
-app.use(bodyParser.json());
+// parse application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(express.json());
 
 app.post('/register', (req, res) => {
   const { username, password } = req.body;

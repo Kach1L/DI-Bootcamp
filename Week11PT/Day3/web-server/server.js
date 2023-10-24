@@ -1,6 +1,7 @@
-const express = require("express");
+const express = require('express');
 // const bp = require("body-parser");
 const { users } = require("./config/users.js");
+const { user_router } = require('./routes/users.route.js');
 
 const app = express();
 
@@ -9,6 +10,10 @@ app.use(express.urlencoded({ extended: false }));
 
 // parse application/json
 app.use(express.json());
+
+// app.use("/api/user",user_router);
+
+app.use("/", express.static(__dirname+'/public'))
 
 app.listen(3001, () => {
   console.log("run on port 3001");

@@ -1,0 +1,24 @@
+div {
+    width: 400px;
+    height: 75px;
+    border: 2px solid grey;
+    position: relative;
+}
+
+header {
+    background-color: aqua;
+    width: 60px;
+    height: 60px;
+    border: 1px solid aqua;
+    position: absolute
+}
+
+section {
+    background-color: orange;
+    width: 65px;
+    height: 65px;
+    border: 1px solid orange;
+    position: absolute
+}
+
+
